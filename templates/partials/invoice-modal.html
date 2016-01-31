@@ -44,9 +44,32 @@
         </div>
         <div class="radio">
             <label>
-                <input type="radio" ng-model="invoicing.paiment_mode" name="paimentmode"  value="notpaid">
+                <input type="radio" ng-model="invoicing.paiment_mode" name="paiment_mode"  value="notpaid">
                 {% trans 'Not paid' %}
             </label>
+        </div>
+        <hr/>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="invoicing.more_invoices" name="more_invoices">{% trans 'Pay other invoices'%}
+            </label>
+        </div>
+        <div ng-if="invoicing.more_invoices">
+            <label for="selectInvoices"> {% trans 'Other invoices'%} </label>
+                <select ng-show="remaining_invoices().length > 0" name="selectInvoices" id="selectInvoices" ng-model="add_invoice" ng-change="addSelectToList(add_invoice)"
+                ng-options="invoice as invoice.desc for invoice in remaining_invoices()" value="invoice">
+                </select>
+        </div>
+        <div ng-if="invoicing.more_invoices">
+            <div ng-repeat="value in invoicing.additional_invoices">
+                <span>{$ value.desc $}</span><span>
+                <button type="button btn-default btn-xs" 
+                ng-click="remove_invoice(value)"
+                tooltip="Enlever cette facture"
+                tooltip-placement="right"
+                ><span aria-hidden="true">&times;</span><span class="sr-only">Remove</span>
+            </button></span>
+            </div>
         </div>
         <!--div ng-if="invoicing.paiment_mode == 'check'">
             <div class="form-group">

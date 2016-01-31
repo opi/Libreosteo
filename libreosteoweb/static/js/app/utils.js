@@ -46,4 +46,17 @@ Array.prototype.find = function(predicate, thisArg) {
         return;
     }
     return lastValue;
-}
+};
+
+Array.prototype.diff = function(a) {
+    return this.filter(function(i) {return a.indexOf(i) < 0;});
+};
+
+Array.prototype.remove = function(o)
+{
+    if (this.indexOf(o) != -1) {
+        this.splice(this.indexOf(o), 1);
+        return true;
+    }
+    return false;
+};

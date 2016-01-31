@@ -356,6 +356,36 @@ var InvoiceFormCtrl = function($scope, $modalInstance, OfficeSettingsServ) {
             payer : null,
             number : null,
         },
+        more_invoices: false,
+        additional_invoices : [],
+    };
+
+    $scope.list_invoices = [
+        {id  : 1, desc: 'Patient 1 - 50,0 € - 10045 '},
+        {id  : 2, desc: 'Patient 2 - 50,0 € - 10043 '},
+    ];
+
+    $scope.addSelectToList = function(invoice)
+    {
+        console.log("addSelectToList "+angular.toJson(invoice));
+        if (invoice){
+            $scope.invoicing.additional_invoices.push(invoice);
+        }
+
+        console.log($scope.invoicing.additional_invoices);
+    };
+
+    $scope.remaining_invoices = function()
+    {
+        return $scope.list_invoices.diff($scope.invoicing.additional_invoices);
+    };
+
+    $scope.remove_invoice = function(invoice)
+    {
+        if(invoice)
+        {
+            $scope.invoicing.additional_invoices.remove(invoice);
+        }
     };
 
     OfficeSettingsServ.get(function(settings){
