@@ -1,4 +1,3 @@
-
 /**
     This file is part of Libreosteo.
 
@@ -71,6 +70,7 @@ examination.directive('examination', ['ExaminationServ', function(ExaminationSer
             close : '&',
             newExamination: '=',
             onDelete : '&',
+            startExamination : '&',
         },
       compile: function(element, attrs){
           if (!attrs.newExamination) {attrs.newExamination = false};

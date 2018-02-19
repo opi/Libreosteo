@@ -298,6 +298,8 @@
 <uib-tab heading="{% trans 'Examinations' %}" active="examinationsTab.examinationsListActive" ui-sref="patient.examinations" index="5">
     <examination model="previousExamination.data" ng-if="previousExamination.data != null" ng-animate="displayExamination"
     save-model="saveExamination(previousExamination.data)"
+    examinations="examinations" 
+    start-examination="startExamination()"
     new-examination="false"
     close="invoiceExamination(previousExamination.data)" on-delete='examinationDeleted(previousExamination.data)'/>
     <timeline archive-examination="previousExamination" examinations="examinations" start-examination="startExamination()" examination-is-active="examinationsTab.newExaminationDisplay" ng-if="previousExamination.data == null"

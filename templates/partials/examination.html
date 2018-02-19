@@ -11,6 +11,40 @@
             </button>
         </div>
     </div>
+    <div class="examination-top-bar">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <ul class="nav navbar-nav">
+                    <li><a href="#">« Consultation précédent</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a ng-click="model = null" ui-sref="patient.examinations">Toutes les consultations</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Liste des consultations <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a ng-click="loadExamination(4)" ui-sref="patient.examination({examinationId : 4 })">Consultation 4</a></li>
+                            <li><a ng-click="loadExamination(2)" ui-sref="patient.examination({examinationId : 2 })">Consultation 2</a></li>
+                            <li><a href="#">Consultation du 04/12/12</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <button type="button" class="btn btn-default navbar-btn" ng-click="startExamination()" ng-disabled="examinationIsActive">
+                    {% trans 'Start an examination' %}
+                </button>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Consultation suivante »</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
     <form editable-form name="editableForm" edit-form-control edit="edit" save="save" delete="delete" trigger="triggerEditForm" onaftersave="saveModel()">
     <div class="row">
         <div class="col-md-5">
