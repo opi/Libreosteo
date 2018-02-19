@@ -16,15 +16,15 @@
             <div class="container-fluid">
 
                 <ul class="nav navbar-nav">
-                    <li><a href="#">« Consultation précédent</a></li>
+                    <li><a href="#">« {% trans 'Previous examination' %}</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li>
-                        <a ng-click="model = null" ui-sref="patient.examinations">Toutes les consultations</a>
+                        <a ng-click="model = null" ui-sref="patient.examinations">{% trans 'All consultations' %}</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            Liste des consultations <span class="caret"></span>
+                            {% trans 'Examinations list' %} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a ng-click="loadExamination(4)" ui-sref="patient.examination({examinationId : 4 })">Consultation 4</a></li>
@@ -39,7 +39,7 @@
                 </button>
                 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Consultation suivante »</a></li>
+                    <li><a href="#">{% trans 'Next examination' %} »</a></li>
                 </ul>
             </div>
         </nav>

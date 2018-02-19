@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libreosteo 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-10 09:56+0200\n"
-"PO-Revision-Date: 2017-09-10 09:27+0200\n"
+"POT-Creation-Date: 2018-02-20 15:15+0100\n"
+"PO-Revision-Date: 2018-02-19 17:39+0100\n"
 "Last-Translator: GURY <jeanbaptiste.gury@gmail.com>\n"
 "Language-Team: France <jeanbaptiste.gury@gmail.com>\n"
 "Language: fr\n"
@@ -292,7 +292,7 @@ msgstr "Raison de l'état"
 msgid "Type"
 msgstr "Type"
 
-#: libreosteoweb/models.py:127 templates/partials/examination.html:32
+#: libreosteoweb/models.py:127 templates/partials/examination.html:66
 msgid "Invoice"
 msgstr "Facture"
 
@@ -715,15 +715,35 @@ msgstr "Ajouter un médecin"
 msgid "Add"
 msgstr "Ajouter"
 
-#: templates/partials/examination.html:19 templates/partials/timeline.html:18
+#: templates/partials/examination.html:19
+msgid "Previous examination"
+msgstr "Consultation précédente"
+
+#: templates/partials/examination.html:23
+msgid "All consultations"
+msgstr "Toutes les consultations"
+
+#: templates/partials/examination.html:27
+msgid "Examinations list"
+msgstr "Liste des consultations"
+
+#: templates/partials/examination.html:38 templates/partials/timeline.html:6
+msgid "Start an examination"
+msgstr "Démarrer une consultation"
+
+#: templates/partials/examination.html:42
+msgid "Next examination"
+msgstr "Consultation suivante"
+
+#: templates/partials/examination.html:53 templates/partials/timeline.html:18
 msgid "Session of "
 msgstr "Séance du"
 
-#: templates/partials/examination.html:19 templates/partials/timeline.html:21
+#: templates/partials/examination.html:53 templates/partials/timeline.html:21
 msgid "by"
 msgstr "par"
 
-#: templates/partials/examination.html:186
+#: templates/partials/examination.html:220
 msgid "Close"
 msgstr "Clôturer"
 
@@ -1099,10 +1119,6 @@ msgstr "Suivant"
 #: templates/partials/user-profile.html:33
 msgid "Change password"
 msgstr "Modifier le mot de passe"
-
-#: templates/partials/timeline.html:6
-msgid "Start an examination"
-msgstr "Démarrer une consultation"
 
 #: templates/partials/timeline.html:29
 msgid "No comment"
